@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class App {
+public class menu {
     static Scanner sc = new Scanner(System.in);
     static int[] cisla = new int[0];
 
