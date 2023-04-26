@@ -18,19 +18,22 @@ public class menu {
                     najitNejmensiHodnotu();
                     break;
                 case 3:
-                    String[] algoritmy = {"Bubble Sort", "Insertion Sort", "Selection Sort", "Merge Sort"};
+                    String[] algoritmy = { "Bubble Sort", "Insertion Sort", "Selection Sort", "Merge Sort" };
                     switch (vyberVolby(algoritmy)) {
                         case 1:
                             bubbleSort();
+                            vypisPole(cisla);
                             break;
                         case 2:
                             insertionSort();
+                            vypisPole(cisla);
                             break;
                         case 3:
                             selectionSort();
+                            vypisPole(cisla);
                             break;
                         case 4:
-                            mergeSort(cisla);
+                            vypisPole(mergeSort(cisla));
                             break;
                         default:
                             System.out.println("Nebyl vybrán správný algoritmus.");
@@ -44,49 +47,33 @@ public class menu {
         }
     }
 
-    static void mergeSort(int[] cisla) {
-        if (cisla.length > 1) {
-            int stred = cisla.length / 2;
-            int[] levaStrana = new int[stred];
-            int[] pravaStrana = new int[cisla.length - stred];
-            for (int i = 0; i < stred; i++) {
-                levaStrana[i] = cisla[i];
-            }
-            for (int i = stred; i < cisla.length; i++) {
-                pravaStrana[i - stred] = cisla[i];
-            }
-            mergeSort(levaStrana);
-            mergeSort(pravaStrana);
-            merge(cisla, levaStrana, pravaStrana);
-            vypisPole();
+    static int[] mergeSort(int[] pole) {
+        if (pole.length <= 1) {
+            return pole; // Stop vetev
         }
+        // Rekurzni vetev
+        int stred = pole.length / 2;
+        int[] levaStrana = Arrays.copyOfRange(pole, 0, stred),
+                pravaStrana = Arrays.copyOfRange(pole, stred, pole.length);
+
+        levaStrana = mergeSort(levaStrana);
+        pravaStrana = mergeSort(pravaStrana);
+
+        return merge(levaStrana, pravaStrana);
     }
 
-    static void merge(int[] cisla, int[] levaStrana, int[] pravaStrana){
-        int delkaLeva = levaStrana.length;
-        int delkaPrava = pravaStrana.length;
-        int i = 0, j = 0, k = 0;
-        while (i < delkaLeva && j < delkaPrava) {
-            if(levaStrana[i] <= pravaStrana[j]){
-                cisla[k] = levaStrana[i];
-                i++;
+    static int[] merge(int[] levaStrana, int[] pravaStrana) {
+        int[] vysledne = new int[levaStrana.length + pravaStrana.length];
+
+        for (int indexVysledne = 0, indexLeve = 0, indexPrave = 0; indexVysledne < vysledne.length; indexVysledne++) {
+            if (indexPrave >= pravaStrana.length
+                    || indexLeve < levaStrana.length && levaStrana[indexLeve] < pravaStrana[indexPrave]) {
+                vysledne[indexVysledne] = levaStrana[indexLeve++];
+            } else {
+                vysledne[indexVysledne] = pravaStrana[indexPrave++];
             }
-            else{
-                cisla[k] = pravaStrana[j];
-                j++;
-            }
-            k++;
         }
-        while (i < delkaLeva) {
-            cisla[k] = levaStrana[i];
-            i++;
-            k++;
-        }
-        while (j < delkaPrava) {
-            cisla[k] = pravaStrana[j];
-            j++;
-            k++;
-        }
+        return vysledne;
     }
 
     static void selectionSort() {
@@ -101,7 +88,6 @@ public class menu {
             cisla[index] = cisla[i];
             cisla[i] = mensiCislo;
         }
-        vypisPole();
     }
 
     static void insertionSort() {
@@ -114,7 +100,6 @@ public class menu {
             }
             cisla[j] = temp;
         }
-        vypisPole();
     }
 
     static void bubbleSort() {
@@ -127,7 +112,6 @@ public class menu {
                 }
             }
         }
-        vypisPole();
     }
 
     static void najitNejmensiHodnotu() {
@@ -170,14 +154,15 @@ public class menu {
             System.out.println("Neplatna hodnota, zadej znovu: \n");
         } while (true);
     }
-    
-    static int ziskatCislo(String zprava){
+
+    static int ziskatCislo(String zprava) {
         System.out.print(zprava);
-        int cislo = sc.nextInt(); sc.nextLine();
+        int cislo = sc.nextInt();
+        sc.nextLine();
         return cislo;
     }
-    
-    static void vypisPole(){
+
+    static void vypisPole(int[] cisla) {
         System.out.println(Arrays.toString(cisla));
         System.out.println();
     }
