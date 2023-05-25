@@ -31,35 +31,18 @@ public class Podretezec {
         for (int i = 0; i < textZnaky.length; i++) {
             if (podretezecZnaky[0] == textZnaky[i]) {
                 vyskytZnaku = 0;
-                for (char hledanyZnak : podretezecZnaky) {
-                    if (hledanyZnak != textZnaky[i]) {
-                        break;
-                    } else{
-                        i++;
+                for (int j = 1; j < podretezecZnaky.length; j++) {
+                    if (podretezecZnaky[j] == textZnaky[i + j]) {
                         vyskytZnaku++;
+                    } else{
+                        break;
                     }
                 }
-                if (vyskytZnaku == podretezecZnaky.length) {
+                if (vyskytZnaku == podretezecZnaky.length - 1) {
                     vyskyt++;
                 }
-
-            }            
+            }          
         }
-
-        // for (int i = 0; i < textZnaky.length; i++) {
-        //     if (podretezecZnaky[0] == textZnaky[i]) {
-        //         if (podretezecZnaky.length > 1 && i < textZnaky.length - 1) {
-        //             for (int j = 1; j < podretezecZnaky.length; j++) {
-        //                 if (podretezecZnaky[j] == textZnaky[i + 1]) {
-        //                     i++;
-        //                 }
-        //             }
-        //             vyskyt++;           
-        //         } else if (podretezecZnaky.length == 1) {
-        //             vyskyt++;
-        //         }
-        //     }
-        // }
         return vyskyt;
     }
     private static String zadaniPodretezce() {
