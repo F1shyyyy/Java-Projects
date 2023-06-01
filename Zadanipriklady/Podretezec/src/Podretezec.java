@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Podretezec {
     static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         String zadanyText = zadaniTextu();
         String hledanyPodretezec = zadaniPodretezce();
         int pocetVyskytu = hledaniVyskytu(zadanyText, hledanyPodretezec);
@@ -27,7 +27,7 @@ public class Podretezec {
         }
         System.out.println(Arrays.toString(podretezecZnaky));
         int vyskyt = 0;
-        int vyskytZnaku = 0;
+        int vyskytZnaku;
         for (int i = 0; i < textZnaky.length; i++) {
             if (podretezecZnaky[0] == textZnaky[i]) {
                 vyskytZnaku = 0;
