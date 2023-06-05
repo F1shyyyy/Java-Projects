@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Factorial/Factorial.iml" filepath="$PROJECT_DIR$/Factorial/Factorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java-Projects.iml" filepath="$PROJECT_DIR$/.idea/Java-Projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Menu/Menu.iml" filepath="$PROJECT_DIR$/Menu/Menu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MergeSort/MergeSort.iml" filepath="$PROJECT_DIR$/MergeSort/MergeSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Metody1/Metody1.iml" filepath="$PROJECT_DIR$/Metody1/Metody1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MinMaxPrumer/MinMaxPrumer.iml" filepath="$PROJECT_DIR$/MinMaxPrumer/MinMaxPrumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zadanipriklady/Podretezec/Podretezec.iml" filepath="$PROJECT_DIR$/Zadanipriklady/Podretezec/Podretezec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zadanipriklady/PorovnaniTextu/PorovnaniTextu.iml" filepath="$PROJECT_DIR$/Zadanipriklady/PorovnaniTextu/PorovnaniTextu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/String/String.iml" filepath="$PROJECT_DIR$/String/String.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calculator/calculator.iml" filepath="$PROJECT_DIR$/calculator/calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/datovetypy/datovetypy.iml" filepath="$PROJECT_DIR$/datovetypy/datovetypy.iml" />
+    </modules>
+  </component>
+</project>

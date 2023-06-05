@@ -1,9 +1,12 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 
 public class porovnaniTextu {
-    public static void main(String[] args){
-        String scifiText = "Dej mi darek budem bratri pripadne sourozenci vzdyt to dobre znas budem k sobe navzdy patrit na chvili neumru a mozna naporad. Zlej vitr nezacne vat my prani nerozmeta Dej mi darek budem bratri pripadne sourozenci vzdyt to dobre znas mam chut jeste nekdy spatrit uplne vsedni veci ty mi je muzes dat. Zlej vitr nezacne vat my prani nerozmeta. Tahleta nabidka je sci-fi povidka ktera ma sanci ze se muze stat tahleta nabidka zazracna vyhybka a moje telo zas bude muj hrad. Tahleta nabidka je sci-fi povidka ktera ma sanci ze se muze stat tahleta nabidka zazracna vyhybka pojedu domu a nebude tma.";
-        String aiText = "Byla jednou mala vesnicka uprostred lesu. Jeji obyvatele byli znami svou laskou k prirode a magii. Mezi nimi zila mala divka jmenem Alice. Jednoho dne objevila v housti lesa ztraceny kouzelny kamen. Jakmile ho vzala do ruky, dostala schopnost mluvit se zviraty. Alice se rozhodla vyuzit svuj dar k dobrym ucelum. Pomahala zviratkum v lese, poslouchala jejich starosti a radila jim. Rychle se stala znamou po celem kraji. Lide zacali verit v jeji schopnosti a chodili za ni s prosbami o pomoc. Alice se stala hrdinkou vesnicky a rozsirila povest o lasce k prirode mezi jejimi spoluobcany. Vsichni se zacali starat o les a zvirata s ohledem na jejich potreby.";
+    public static void main(String[] args) throws IOException{
+        String scifiText = Files.readString(Path.of(".\\PorovnaniTextu\\src\\scifi.txt"));
+        String aiText = Files.readString(Path.of(".\\PorovnaniTextu\\src\\ai.txt"));
         char[] znakyChar = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r','s', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '-' };
         String samohlasky = "aeiouy";
         String souhlasky = "hkrdtncjbflmpsvz";
