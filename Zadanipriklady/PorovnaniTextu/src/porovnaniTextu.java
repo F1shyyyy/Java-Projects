@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class porovnaniTextu {
     public static void main(String[] args) throws IOException{
-        String scifiText = Files.readString(Path.of(".\\PorovnaniTextu\\src\\scifi.txt"));
-        String aiText = Files.readString(Path.of(".\\PorovnaniTextu\\src\\ai.txt"));
+        String scifiText = Files.readString(Path.of(".\\Zadanipriklady\\PorovnaniTextu\\src\\scifi.txt"));
+        String aiText = Files.readString(Path.of(".\\Zadanipriklady\\PorovnaniTextu\\src\\ai.txt"));
         char[] znakyChar = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r','s', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '-' };
         String samohlasky = "aeiouy";
         String souhlasky = "hkrdtncjbflmpsvz";
